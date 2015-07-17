@@ -1,0 +1,294 @@
+#include "pokerai.h"
+
+
+//Naive way to get thread ID
+#define THREAD_ID ((unsigned int)pthread_self() % 100)
+
+
+static
+void SpawnMonteCarloThreads(PokerAI *ai);
+
+static
+void *SimulateGames(void *_ai);
+
+static
+int SimulateSingleGame(PokerAI *ai, int seed_index);
+
+static
+int draw(int *deck, int *psize, int rand_num);
+
+static
+int BestOpponentHand(int **opponents, int numopponents, int numcards);
+
+static
+int GetNextFreeSeedIndex(PokerAI *ai);
+
+static
+void ReleaseSeedIndex(PokerAI *ai, int index);
+
+static
+int draw(int *deck, int *psize, int rand_num)
+{
+    int index = rand_num % *psize;
+    int value = deck[index];
+    deck[index] = deck[*psize - 1];
+    *psize -= 1;
+
+    return value;
+}
+
+
+static
+int BestOpponentHand(int **opponents, int numopponents, int numcards)
+{
+    int best = 9999;
+    int score;
+    for (int i = 0; i < numopponents; i++)
+    {
+        score = eval_hand_hsy(opponents[i], numcards);
+        if (best > score)
+        {
+            best = score;
+        }
+    }
+
+    return best;
+}
+
+static
+int GetNextFreeSeedIndex(PokerAI *ai)
+{
+    int index = -1;
+
+    pthread_mutex_lock(&ai->seed_mutex);
+
+    for (int i = 0; i < ai->num_threads; i++)
+    {
+        if (ai->seed_avail[i])
+        {
+            ai->seed_avail[i] = false;
+            index = i;
+            break;
+        }
+    }
+
+    pthread_mutex_unlock(&ai->seed_mutex);
+    return index;
+}
+
+
+static
+void ReleaseSeedIndex(PokerAI *ai, int index)
+{
+    pthread_mutex_lock(&ai->seed_mutex);
+    ai->seed_avail[index] = true;
+    pthread_mutex_unlock(&ai->seed_mutex);
+}
+
+static
+int SimulateSingleGame(PokerAI *ai, int seed_index)
+{
+    GameState *game = &ai->game;
+    int me[NUM_HAND + NUM_COMMUNITY];
+    int *opponents[MAX_OPPONENTS];
+    int community[NUM_COMMUNITY];
+    int myscore;
+    int bestopponent;
+    int rand_num;
+
+    for (int i = 0; i < game->num_playing; i++)
+    {
+        opponents[i] = malloc(sizeof(*opponents[i]) * (NUM_HAND + NUM_COMMUNITY));
+    }
+
+    //Create a deck as a randomized queue data structure
+    int deck[NUM_DECK] = {0};
+    int decksize = 0;
+
+    //Cards are 1 indexed
+    for (int i = 1; i < NUM_DECK; i++)
+    {
+        if (game->deck[i])
+        {
+            deck[decksize] = i;
+            decksize++;
+        }
+    }
+
+    //Add the known community cards to the simulation community list
+    for (int i = 0; i < game->communitysize; i++)
+    {
+        community[i] = game->community[i];
+    }
+
+    //Distribute the rest of the community cards
+    for (int i = game->communitysize; i < NUM_COMMUNITY; i++)
+    {
+        ai->seeds[seed_index] = rand_r((unsigned int *)&ai->seeds[seed_index]);
+        rand_num = ai->seeds[seed_index];
+        community[i] = draw(deck, &decksize, rand_num);
+    }
+
+    //Give each opponent their cards
+    for (int opp = 0; opp < game->num_playing; opp++)
+    {
+        //Personal cards
+        for (int i = 0; i < NUM_HAND; i++)
+        {
+            ai->seeds[seed_index] = rand_r((unsigned int *)&ai->seeds[seed_index]);
+            rand_num = ai->seeds[seed_index];
+            opponents[opp][i] = draw(deck, &decksize, rand_num);
+        }
+
+        //Community cards
+        for (int i = NUM_HAND; i < NUM_COMMUNITY + NUM_HAND; i++)
+        {
+            opponents[opp][i] = community[i - NUM_HAND];
+        }
+    }
+
+    //Put my cards into a new array
+    for (int i = 0; i < NUM_HAND; i++)
+    {
+        me[i] = game->hand[i];
+    }
+    for (int i = NUM_HAND; i < NUM_HAND + NUM_COMMUNITY; i++)
+    {
+        me[i] = community[i - NUM_HAND];
+    }
+
+    //See who won
+    myscore = eval_hand_hsy(me, NUM_HAND + NUM_COMMUNITY);
+    bestopponent = BestOpponentHand(opponents, game->num_playing, NUM_HAND + NUM_COMMUNITY);
+
+    //Free allocated memory
+    for (int i = 0; i < game->num_playing; i++)
+    {
+        free(opponents[i]);
+    }
+
+    //Count ties as a win
+    return (myscore <= bestopponent);
+}
+
+
+static
+void *SimulateGames(void *_ai)
+{
+    PokerAI *ai = (PokerAI *)_ai;
+    Timer timer;
+    int seed_index = GetNextFreeSeedIndex(ai);
+
+    if (ai->loglevel >= LOGLEVEL_DEBUG)
+    {
+        fprintf(ai->logfile, "[Thread %u] starting (obtained seed index %d)\n", THREAD_ID, seed_index);
+    }
+
+    int simulated = 0;
+    int won = 0;
+
+    StartTimer(&timer);
+    //Only check the timer after every 5 simulations
+    while (1)
+    {
+        if (simulated % 1000 == 0 && GetElapsedTime(&timer) > ai->timeout)
+        {
+            break;
+        }
+
+        won += SimulateSingleGame(ai, seed_index);
+        simulated++;
+    }
+
+    if (ai->loglevel >= LOGLEVEL_DEBUG)
+    {
+        fprintf(ai->logfile, "[Thread %u] done\t(simulated %d games)\n", THREAD_ID, simulated);
+    }
+
+    //Release our random seed
+    ReleaseSeedIndex(ai, seed_index);
+
+    //Lock the AI mutex and update the totals
+    pthread_mutex_lock(&ai->mutex);
+    ai->games_won += won;
+    ai->games_simulated += simulated;
+    pthread_mutex_unlock(&ai->mutex);
+
+    return NULL;
+}
+
+static
+void SpawnMonteCarloThreads(PokerAI *ai)
+{
+    if (ai->loglevel >= LOGLEVEL_DEBUG)
+    {
+        fprintf(ai->logfile, "Spawning Monte Carlo threads.\n");
+    }
+
+    //Spawn threads to perform Monte Carlo simulations
+    for (int i = 0; i < ai->num_threads; i++)
+    {
+        pthread_create(&ai->threads[i], NULL, SimulateGames, ai);
+    }
+
+    //Wait until each thread has finished simulating games
+    for (int i = 0; i < ai->num_threads; i++)
+    {
+        pthread_join(ai->threads[i], NULL);
+    }
+
+    if (ai->loglevel >= LOGLEVEL_DEBUG)
+    {
+        fprintf(ai->logfile, "All Monte Carlo threads finished.\n");
+    }
+}
+
+double GetWinProbability(PokerAI *ai)
+{
+    double winprob;
+    ai->games_won = 0;
+    ai->games_simulated = 0;
+
+    //Use preflop statistics if there aren't any community cards yet
+    if (ai->game.communitysize == 0)
+    {
+        if (ai->loglevel >= LOGLEVEL_DEBUG)
+        {
+            fprintf(ai->logfile, "SHOULD NOT BE HERE!!!\nPerforming simple preflop computation.\n");
+        }
+
+        winprob = PreflopWinProbability(ai->game.hand);
+        //winprob = GetPreflopValue(ai->game.hand)/60;
+    }
+    //Otherwise, start spawning Monte Carlo threads
+    else
+    {
+        if (ai->loglevel >= LOGLEVEL_DEBUG)
+        {
+            fprintf(ai->logfile, "Performing Monte Carlo simulations.\n");
+        }
+
+        SpawnMonteCarloThreads(ai);
+        winprob = ((double) ai->games_won) / ai->games_simulated;
+
+        if (ai->loglevel >= LOGLEVEL_INFO)
+        {
+            //Human-readable output
+            if (ai->games_simulated > 1000000)
+            {
+                fprintf(ai->logfile, "Simulated %.3fM games.\n", (double)ai->games_simulated / 1000000);
+            }
+            else if (ai->games_simulated > 1000)
+            {
+                fprintf(ai->logfile, "Simulated %dk games.\n", ai->games_simulated / 1000);
+            }
+            else
+            {
+                fprintf(ai->logfile, "Simulated %d games.\n", ai->games_simulated);
+            }
+        }
+    }
+
+    return winprob;
+}
+

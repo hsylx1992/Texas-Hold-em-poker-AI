@@ -1,0 +1,212 @@
+check the size of works folder ....
+archive the works folder
+you should use works.tar.gz for submit
+
+prepare for test..
+start server
+start players
+start playmates
+start your game
+{1of8|8|  1r}{grp:2.4         }{pos5-3|act:0c,0r,0rc}{raise 0033:|  40b++> 113}-[pot: 340|sk 2000|c_m  80|r_m  40]-[5S 5C ]
+{1of8|6|  1r}{grp:2.4         }{pos5-3|act:0c,1r,0rc}{fold      :| 200cXX> 120}-[pot:1640|sk 1880|c_m 200|r_m 100]-[5S 5C ]
+{2of8|8|  2r}{grp:9.0         }{pos4-2|act:0c,0r,0rc}{fold      :|  80cXX>   0}-[pot: 220|sk 1880|c_m  80|r_m   0]-[TC 4D ]
+{3of7|7|  3r}{grp:7.0         }{pos2-1|act:0c,0r,0rc}{fold      :| 140cXX>   0}-[pot: 200|sk 1880|c_m 140|r_m 100]-[9C KS ]
+{2of4|4|  4r}{grp:5.0         }{pos4-4|act:0c,0r,0rc}{raise 0042:|  40b++> 162}-[pot: 240|sk 1840|c_m  80|r_m  40]-[AH 7H ]
+{2of4|2|  4r}{grp:5.0         }{pos4-4|act:0c,1r,0rc}{raise 0043:|  42b++> 289}-[pot: 612|sk 1718|c_m  84|r_m  42]-[AH 7H ]
+{1of4|2|  4r}{grp:5.0         }{pos4-4|act:0c,2r,0rc}{fold      :|19831cXX> 289}-[pot:22409|sk 1591|c_m19831|r_m18120]-[AH 7H ]
+{2of3|3|  5r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  20cXX>  20}-[pot: 100|sk 1571|c_m  20|r_m   0]-[2C TH ]
+{2of3|3|  6r}{grp:5.0         }{pos1-4|act:0c,0r,0rc}{raise 0033:|   0b++>  73}-[pot:  60|sk 1571|c_m  40|r_m   0]-[7C 6C ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1|  6r}{ wp:0.43|eg: 2.8}{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>  80}-[pot: 220|sk 1491|c_m  40|r_m   0]-[7C 6C | 2C 3D TH ]
+--- fold  ---> check --- 
+{2of3|3|  7r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk 1451|c_m   0|r_m   0]-[9C 2D ]
+-1
+1
+2
+3
+4
+5
+6
+--- fold  ---> check --- 
+{2of3|0|  7r}{ wp:0.10|eg: 0.0}{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk 1451|c_m   0|r_m   0]-[9C 2D | QH KH 5C ]
+{2of3|3|  8r}{grp:7.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk 1511|c_m 120|r_m 100]-[6S KS ]
+{2of3|3|  9r}{grp:7.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1511|c_m  40|r_m   0]-[QD 9H ]
+--- fold  ---> check --- 
+{2of3|3| 10r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  60|sk 1471|c_m   0|r_m   0]-[3D 7D ]
+{1of3|3| 11r}{grp:1.0         }{pos2-4|act:0c,0r,0rc}{fold      :|22569cXX>  20}-[pot:22649|sk 1511|c_m22569|r_m22549]-[AH AC ]
+{2of3|3| 12r}{grp:4.0         }{pos1-4|act:0c,0r,0rc}{raise 0041:|   0b++>  81}-[pot:  60|sk 1511|c_m  40|r_m   0]-[JS AD ]
+--- fold  ---> check --- 
+{2of3|3| 13r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk 1531|c_m   0|r_m   0]-[3C 5H ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1| 13r}{ wp:0.13|eg: 0.5}{pos3-4|act:0c,0r,0rc}{fold      :|  40cXX>  40}-[pot: 120|sk 1531|c_m  40|r_m   0]-[3C 5H | KH AC KC ]
+{2of3|3| 14r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  60cXX>  20}-[pot: 140|sk 1511|c_m  60|r_m  40]-[AD 2S ]
+{2of3|3| 15r}{grp:7.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1511|c_m  40|r_m   0]-[5C 4D ]
+{2of3|3| 16r}{grp:7.0         }{pos3-4|act:0c,0r,0rc}{fold      :| 100cXX>  40}-[pot: 180|sk 1471|c_m 100|r_m   0]-[2C 4C ]
+{2of3|3| 17r}{grp:5.0         }{pos2-4|act:0c,0r,0rc}{raise 0035:|  40b++> 115}-[pot: 140|sk 1451|c_m  60|r_m  40]-[KS JD ]
+{2of3|1| 17r}{grp:5.0         }{pos2-4|act:0c,1r,0rc}{raise 0041:|   0b++> 201}-[pot: 320|sk 1351|c_m  40|r_m   0]-[KS JD ]
+{1of3|1| 17r}{grp:5.0         }{pos2-4|act:0c,2r,0rc}{fold      :|22508cXX> 201}-[pot:22950|sk 1270|c_m22508|r_m   0]-[KS JD ]
+{2of3|3| 18r}{grp:9.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1270|c_m  40|r_m   0]-[TH 7S ]
+--- fold  ---> check --- 
+{2of3|3| 19r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk 1230|c_m   0|r_m   0]-[JS 6S ]
+-1
+1
+2
+3
+4
+5
+6
+{1of3|1| 19r}{ wp:0.43|eg: 0.9}{pos3-4|act:0c,0r,0rc}{fold      :|22930cXX>  40}-[pot:23010|sk 1230|c_m22930|r_m   0]-[JS 6S | 7C QS 6D ]
+{1of3|3| 20r}{grp:7.0         }{pos2-4|act:0c,0r,0rc}{fold      :|22990cXX>  20}-[pot:23070|sk 1210|c_m22990|r_m22970]-[4H 3H ]
+{2of3|3| 21r}{grp:6.0         }{pos1-4|act:0c,0r,0rc}{raise 0032:|   0b++>  72}-[pot:  60|sk 1210|c_m  40|r_m   0]-[TS KH ]
+{2of3|3| 22r}{grp:2.0         }{pos3-4|act:0c,0r,0rc}{raise 0035:|   0b++> 115}-[pot: 120|sk 1230|c_m  40|r_m   0]-[JH AH ]
+{2of3|1| 22r}{grp:2.0         }{pos3-4|act:0c,1r,0rc}{raise 0041:|   0b++> 201}-[pot: 280|sk 1150|c_m  40|r_m   0]-[JH AH ]
+{2of3|1| 22r}{grp:2.0         }{pos3-4|act:0c,2r,0rc}{raise 0042:|   0b++> 284}-[pot: 443|sk 1069|c_m  41|r_m   0]-[JH AH ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1| 22r}{ wp:0.73|eg:11.9}{pos3-4|act:0c,0r,0rc}{raise 0080:|   0b++> 404}-[pot: 608|sk  986|c_m  40|r_m   0]-[JH AH | 2S 9C 4D ]
+-1
+1
+2
+3
+4
+5
+6
+{1of3|1| 22r}{ wp:0.73|eg: 1.5}{pos3-4|act:0c,1r,0rc}{fold      :|22626cXX> 404}-[pot:23434|sk  866|c_m22626|r_m   0]-[JH AH | 2S 9C 4D ]
+{2of3|3| 23r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk  846|c_m 120|r_m 100]-[6S 3H ]
+{2of3|3| 24r}{grp:9.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk  846|c_m  40|r_m   0]-[7D TS ]
+--- fold  ---> check --- 
+{2of3|3| 25r}{grp:7.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk  806|c_m   0|r_m   0]-[5C 6H ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1| 25r}{ wp:0.23|eg: 0.7}{pos3-4|act:0c,0r,0rc}{fold      :| 100cXX>  40}-[pot: 180|sk  806|c_m 100|r_m   0]-[5C 6H | 5H KS 7D ]
+{2of3|3| 26r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk  786|c_m 120|r_m 100]-[2S 6S ]
+{2of3|3| 27r}{grp:2.2         }{pos1-4|act:0c,0r,0rc}{raise 0042:|   0b++>  82}-[pot:  60|sk  786|c_m  40|r_m   0]-[9D 9C ]
+-1
+1
+2
+3
+4
+5
+6
+--- fold  ---> check --- 
+{2of3|0| 27r}{ wp:0.67|eg: 0.0}{pos1-4|act:0c,0r,0rc}{check     :|   0b==>  82}-[pot: 184|sk  704|c_m   0|r_m   0]-[9D 9C | QS JC 3D ]
+{2of3|3| 28r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{fold      :|  40cXX>  40}-[pot: 120|sk  848|c_m  40|r_m   0]-[2D 9C ]
+{2of3|3| 29r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  60cXX>  20}-[pot: 140|sk  828|c_m  60|r_m  40]-[QD 4D ]
+{2of3|3| 30r}{grp:9.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk  828|c_m  40|r_m   0]-[2D QS ]
+{2of3|3| 31r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{fold      :|  40cXX>  40}-[pot: 120|sk  788|c_m  40|r_m   0]-[2H AS ]
+{2of3|3| 32r}{grp:6.0         }{pos2-4|act:0c,0r,0rc}{raise 0046:|  40b++> 126}-[pot: 140|sk  768|c_m  60|r_m  40]-[TS KD ]
+{1of3|1| 32r}{grp:6.0         }{pos2-4|act:0c,1r,0rc}{fold      :|23506cXX> 126}-[pot:23798|sk  662|c_m23506|r_m   0]-[TS KD ]
+{2of3|3| 33r}{grp:7.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk  662|c_m  40|r_m   0]-[8D 9H ]
+{2of3|3| 34r}{grp:5.0         }{pos3-4|act:0c,0r,0rc}{raise 0041:|   0b++>  81}-[pot:  80|sk  622|c_m   0|r_m   0]-[3C AC ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1| 34r}{ wp:0.43|eg: 1.6}{pos3-4|act:0c,0r,0rc}{fold      :| 100cXX>  81}-[pot: 262|sk  581|c_m 100|r_m   0]-[3C AC | KH TS 2S ]
+{2of3|3| 35r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk  561|c_m 120|r_m 100]-[7D AH ]
+{2of3|3| 36r}{grp:5.0         }{pos1-4|act:0c,0r,0rc}{raise 0039:|   0b++>  79}-[pot:  60|sk  561|c_m  40|r_m   0]-[TH JD ]
+{1of3|1| 36r}{grp:5.0         }{pos1-4|act:0c,1r,0rc}{fold      :|23879cXX>  80}-[pot:24059|sk  481|c_m23879|r_m   0]-[TH JD ]
+{2of3|3| 37r}{grp:5.0         }{pos3-4|act:0c,0r,0rc}{raise 0041:|   0b++> 121}-[pot: 120|sk  441|c_m  40|r_m   0]-[6H AH ]
+{2of3|3| 38r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk  541|c_m 120|r_m 100]-[7S QC ]
+{2of3|3| 39r}{grp:1.0         }{pos1-4|act:0c,0r,0rc}{raise 0124:|   0b++> 164}-[pot:  60|sk  541|c_m  40|r_m   0]-[JD JH ]
+{2of3|1| 39r}{grp:1.0         }{pos1-4|act:0c,1r,0rc}{raise 0115:|   0b++> 403}-[pot: 472|sk  377|c_m 124|r_m   0]-[JD JH ]
+-1
+1
+2
+3
+4
+5
+6
+{1of3|1| 39r}{ wp:0.80|eg: 1.6}{pos1-4|act:0c,0r,0rc}{fold      :|23627cXX> 412}-[pot:24471|sk  129|c_m23627|r_m   0]-[JD JH | TH 3D 9S ]
+{1of3|3| 40r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{fold      :|24431cXX>  40}-[pot:24511|sk   89|c_m24431|r_m   0]-[4C 8S ]
+{2of3|3| 41r}{grp:7.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  60cXX>  20}-[pot: 140|sk   69|c_m  60|r_m  40]-[KH 4H ]
+{2of3|3| 42r}{grp:7.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk   69|c_m  40|r_m   0]-[5C 8C ]
+--- fold  ---> check --- 
+{2of3|3| 43r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk   29|c_m   0|r_m   0]-[5S 2D ]
+-1
+1
+2
+3
+4
+5
+6
+--- fold  ---> check --- 
+{2of3|1| 43r}{ wp:0.00|eg: 0.0}{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  80|sk   29|c_m   0|r_m   0]-[5S 2D | 2H 8D AS ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1| 43r}{ wp:0.00|eg: 0.0}{pos3-4|act:0c,0r,0rc}{fold      :|  40cXX>  40}-[pot: 120|sk   29|c_m  40|r_m   0]-[5S 2D | 2H 8D AS 5H ]
+{2of3|3| 44r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk 1980|c_m 120|r_m 100]-[2S 6S ]
+{2of3|3| 45r}{grp:6.0         }{pos1-4|act:0c,0r,0rc}{raise 0041:|   0b++>  81}-[pot:  60|sk 1980|c_m  40|r_m   0]-[AS TD ]
+{2of3|1| 45r}{grp:6.0         }{pos1-4|act:0c,1r,0rc}{raise 0038:|   0b++> 160}-[pot: 223|sk 1899|c_m  41|r_m   0]-[AS TD ]
+{2of3|1| 45r}{grp:6.0         }{pos1-4|act:0c,2r,0rc}{raise 0042:|   0b++> 246}-[pot: 387|sk 1817|c_m  41|r_m   0]-[AS TD ]
+{2of3|1| 45r}{grp:6.0         }{pos1-4|act:0c,3r,0rc}{call      :|  42c--> 288}-[pot: 554|sk 1734|c_m  42|r_m   0]-[AS TD ]
+-1
+1
+2
+3
+4
+5
+6
+--- fold  ---> check --- 
+{2of3|0| 45r}{ wp:0.53|eg: 0.0}{pos1-4|act:0c,0r,0rc}{check     :|   0b==> 288}-[pot: 596|sk 1692|c_m   0|r_m   0]-[AS TD | QD 3D 8C ]
+{2of3|3| 46r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{fold      :|  40cXX>  40}-[pot: 120|sk 2248|c_m  40|r_m   0]-[2D KS ]
+{2of3|3| 47r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :| 120cXX>  20}-[pot: 200|sk 2228|c_m 120|r_m 100]-[6S JH ]
+{2of3|3| 48r}{grp:3.4         }{pos1-4|act:0c,0r,0rc}{raise 0033:|   0b++>  73}-[pot:  60|sk 2228|c_m  40|r_m   0]-[2S 2D ]
+{2of3|1| 48r}{grp:3.4         }{pos1-4|act:0c,1r,0rc}{raise 0046:|   0b++> 226}-[pot: 280|sk 2148|c_m 100|r_m   0]-[2S 2D ]
+-1
+1
+2
+3
+4
+5
+6
+{2of3|1| 48r}{ wp:0.20|eg: 3.3}{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX> 280}-[pot: 620|sk 1948|c_m  40|r_m   0]-[2S 2D | 8D 5H 9D ]
+--- fold  ---> check --- 
+{2of3|3| 49r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  60|sk 1908|c_m   0|r_m   0]-[9C 2S ]
+{1of3|3| 50r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :|24763cXX>  20}-[pot:24843|sk 1948|c_m24763|r_m24743]-[3H TD ]
+{2of3|3| 51r}{grp:9.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1948|c_m  40|r_m   0]-[2C AS ]
+--- fold  ---> check --- 
+{2of3|3| 52r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{check     :|   0b==>  40}-[pot:  60|sk 1908|c_m   0|r_m   0]-[2H 5H ]
+{2of3|3| 53r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  20cXX>  20}-[pot: 100|sk 1948|c_m  20|r_m   0]-[KC 3S ]
+{2of3|3| 54r}{grp:5.0         }{pos1-4|act:0c,0r,0rc}{raise 0043:|   0b++>  83}-[pot:  60|sk 1948|c_m  40|r_m   0]-[7H AH ]
+{1of3|3| 55r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{fold      :|24823cXX>  40}-[pot:24903|sk 1968|c_m24823|r_m   0]-[7H 2D ]
+{1of3|3| 56r}{grp:7.0         }{pos2-4|act:0c,0r,0rc}{fold      :|24883cXX>  20}-[pot:24963|sk 1948|c_m24883|r_m24863]-[9S 8H ]
+{2of3|3| 57r}{grp:9.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1948|c_m  40|r_m   0]-[7C AH ]
+{2of3|3| 58r}{grp:9.0         }{pos3-4|act:0c,0r,0rc}{fold      :|  40cXX>  40}-[pot: 120|sk 1908|c_m  40|r_m   0]-[JD 6H ]
+{2of3|3| 59r}{grp:9.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  20cXX>  20}-[pot: 100|sk 1888|c_m  20|r_m   0]-[QS 2S ]
+{2of3|3| 60r}{grp:9.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1888|c_m  40|r_m   0]-[JC 2D ]
+{1of3|3| 61r}{grp:4.0         }{pos3-4|act:0c,0r,0rc}{fold      :|25063cXX>  40}-[pot:25143|sk 1848|c_m25063|r_m   0]-[KC QS ]
+{2of3|3| 62r}{grp:7.0         }{pos2-4|act:0c,0r,0rc}{fold      :|  20cXX>  20}-[pot:  60|sk 1828|c_m  20|r_m   0]-[7H 8S ]
+{2of3|3| 63r}{grp:7.0         }{pos1-4|act:0c,0r,0rc}{fold      :|  40cXX>   0}-[pot:  60|sk 1828|c_m  40|r_m   0]-[4D 5S ]
+{1of3|3| 64r}{grp:7.0         }{pos3-4|act:0c,0r,0rc}{fold      :|25123cXX>  40}-[pot:25203|sk 1788|c_m25123|r_m   0]-[8C 7S ]
+{2of3|3| 65r}{grp:4.0         }{pos2-4|act:0c,0r,0rc}{call 

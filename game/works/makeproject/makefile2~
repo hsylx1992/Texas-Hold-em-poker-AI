@@ -1,0 +1,39 @@
+CC		= gcc
+LINKER	= gcc -o
+CLIBS	= -lpthread
+#rm		= rm -f
+
+#all:	CFLAGS = 
+#debug:	CFLAGS = 
+
+PRJDIR  = ..
+SRCDIR	= ../source
+VPATH = ../source/
+
+SRCPATH = ../source
+
+TRGPATH = ../target
+
+objects = player_socket.o \
+	      player.o \
+	      msg_process.o
+
+game : $(objects)
+	cc $(objects) -lpthread -o $(TRGPATH)/game
+
+#main.o : stdio.h
+#TAB cmd
+#-lpthread
+
+player.o : player_socket.h msg_process.h
+#cc -lpthread -c $(SRCPATH)/player.c
+player_socket.o :
+#cc -lpthread -c $(SRCPATH)/player_socket.c
+msg_process.o :
+
+.PHONY : clean
+clean : 
+	rm $(TRGPATH)/game $(objects)
+	
+	
+	
